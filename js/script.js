@@ -19,5 +19,8 @@ function resetGame()  {
 }
 
 function getRandomWord() {
-  
+  let {word, hint} = wordList[Math.floor(math.random() * wordList.length)];
+  currentWord = word;
+  document.getElementsByClassName('hint-text').innerText = hint;
+  resetGame();
 }
