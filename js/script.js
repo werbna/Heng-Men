@@ -8,3 +8,16 @@ const maxGuesses = 6;
 
 let currentWord, correctLetters, wrongGuessCount;
 
+function resetGame()  {
+  correctLetters = [];
+  wrongGuessCount = 0;
+  hangmanImage.src = 'images/hangman-0.svg';
+  guessesText.innerHTML = `${wrongGuessCount} / ${maxGuesses}`;
+  wordDisplay.innerHTML = currentWord.split('').map(() => `<li class="letter"></li>`).join('');
+  keyboardDiv.querySelectorAll('button').forEach(btn => btn.disabled = false);
+  gameModal.classList.remove('show');
+}
+
+function getRandomWord() {
+  
+}
